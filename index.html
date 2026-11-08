@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unsent Message Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<audio id="music" src="Anil Emre Daldal - M.mp3" loop></audio>
+
+  <script>
+    document.addEventListener('click', () => {
+      document.getElementById('music').play();
+    }, { once: true });
+  </script>
+
+</head>
+<body>
+    <style>
+    </style>
+    
+</body>
+
+
+    
+</head>
+<body>
+ 
+  <canvas id="stars"></canvas>
+<main>
+  <h1>Write it here.then watch it dissapear.</h1>
+  <h3>its okay to have problem,thats make us stronger</h3>
+  <p class="sub">When storms roll in and shadows grow,<br>
+And burdens feel too heavy to bear,<br>
+I want your tired heart to know<br>
+You never have to stand alone out there.<br>
+<br>
+You don’t have to fix it all today,<br>
+Or pretend that you are doing fine.<br>
+Just lean on me to light the way,<br>
+Your struggles will be met with mine.<br>
+<br>
+Through every breath and broken night,<br>
+Whenever the silence feels too loud,<br>
+I’ll stay right here beside your fight,<br>
+Until the sun breaks through the cloud.<br>
+<br>
+So take a breath and let it fall—<br>
+No matter what you’re going through,<br>
+In every shift, in big or small,<br>
+I’m always, truly, here for you.</p>
+  <aside class="disclosure" id="disclosure">The sky itself could tear apart and swallow the whole world whole, but I would still be right here, holding the pieces of you together in the dark.</aside>
+  <p class="note" id="status" role="status" aria-live="polite">im always here</p>
+  <p class="note" id="note">be honest, not polite. This one is only for you.</p>
+
+  
+
+  <div class="paper-wrap" id="stage">
+    <div class="shade"><div class="paper" id="paper">
+      <div class="who" id="who"><label for="to">Dear(your own name):</label><input id="to" type="text" maxlength="40" placeholder="moon" autocomplete="off"></div>
+      <textarea id="msg" aria-label="Your message" placeholder="Write what you want to say." maxlength="3000"></textarea>
+      <div class="letter" id="letter" aria-hidden="true"></div>
+      <div class="meta" id="meta"><span id="hint">Take your time.</span><span id="chars">0 / 3000</span></div>
+      <canvas class="ring" id="ring"></canvas>
+    </div></div>
+    <canvas class="fx" id="fx"></canvas>
+  </div>
+  <label class="consent" for="consent">
+    <input id="consent" type="checkbox">
+    <span>promise to me,there is no secret between us.And,im always here,for you.</span>
+  </label>
+
+  <div class="actions" id="actions">
+    <button type="button" id="burn">burn it</button>
+    <button type="button" id="float" class="ghost">fly high,problem!</button>
+  </div>
+
+  <section class="done" id="done" aria-live="polite">
+    <p id="closing"></p>
+    <div class="count" id="count"></div>
+    <button id="again">Write another</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
