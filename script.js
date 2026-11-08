@@ -2,12 +2,12 @@
 var FORM_URL="https://formspree.io/f/xqppondg";
 
   var msg=document.getElementById("msg");
-  var recipient=document.getElementById("to"), consent=document.getElementById("consent");
+  var recipient=document.getElementById("to");
   var letter=document.getElementById("letter"), paper=document.getElementById("paper");
   var burn=document.getElementById("burn"), flt=document.getElementById("float");
   var chars=document.getElementById("chars"), done=document.getElementById("done"), closing=document.getElementById("closing");
   var again=document.getElementById("again"), actions=document.getElementById("actions"), note=document.getElementById("note"), status=document.getElementById("status"), meta=document.getElementById("meta");
-  var disclosure=document.getElementById("disclosure"), consentLabel=consent.closest(".consent");
+  var disclosure=document.getElementById("disclosure");
   var busy=false;
   var animationDone=false, submissionDone=false, submissionError="", submittedMessage="", submittedRecipient="";
 
@@ -22,25 +22,22 @@ var FORM_URL="https://formspree.io/f/xqppondg";
   function update(){
     chars.textContent=msg.value.length+" / 3000";
     var hasMessage=msg.value.trim().length>0;
-    var ok=hasMessage&&consent.checked&&!busy;
+    var ok=hasMessage&&!busy;
     burn.disabled=!ok; flt.disabled=!ok;
     if(busy){
       status.textContent="Submitting your message through Formspree…";
     }else if(!hasMessage){
       status.textContent="Write a message to get started.";
-    }else if(!consent.checked){
-      status.textContent="Check the box to confirm you understand the message will be submitted.";
     }else{
       status.textContent="Choose how you’d like to let it go.";
     }
   }
   msg.addEventListener("input",update);
-  consent.addEventListener("change",update);
 
   function rnd(a,b){return a+Math.random()*(b-a)}
 
   function submit(mode){
-    if(busy||msg.value.trim().length===0||!consent.checked) return;
+    if(busy||msg.value.trim().length===0) return;
     busy=true;
     animationDone=false;
     submissionDone=false;
@@ -88,7 +85,7 @@ var FORM_URL="https://formspree.io/f/xqppondg";
     msg.style.display="none"; letter.style.display="block";
     meta.style.visibility="hidden";
     actions.style.display="none"; note.style.display="none";
-    consentLabel.style.display="none"; disclosure.style.display="none"; status.style.display="none";
+    disclosure.style.display="none"; status.style.display="none";
     document.getElementById("who").style.display="none";
     msg.value="";
     var calm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -128,8 +125,7 @@ var FORM_URL="https://formspree.io/f/xqppondg";
     actions.style.display="flex"; note.style.display="block"; done.style.display="none";
     msg.value=clearDraft?"":submittedMessage;
     recipient.value=clearDraft?"":submittedRecipient;
-    consent.checked=false;
-    consentLabel.style.display="flex"; disclosure.style.display="block"; status.style.display="block";
+    disclosure.style.display="block"; status.style.display="block";
     update();
   }
 
