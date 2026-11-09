@@ -27,7 +27,7 @@ var FORM_URL="https://formspree.io/f/xqppondg";
     if(busy){
       status.textContent="Submitting your message through Formspree…";
     }else if(!hasMessage){
-      status.textContent="Write a message to get started.";
+      status.textContent="The stars themselves were born from the same cosmic dust that moves within your breath, bridging the quiet void between eternity and a single heartbeat.";
     }else{
       status.textContent="Choose how you’d like to let it go.";
     }
